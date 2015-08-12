@@ -134,8 +134,8 @@ void turnLeft()
 {
     //slow down the left motor to turn right
     if (!(currentDirection & LEFT_DIRECTION)){
-      motorLeft.mSpeed-=TURN_SPEED_OFFSET; 
-      //motorLeft.mSpeed = 0;
+      //motorLeft.mSpeed-=TURN_SPEED_OFFSET; 
+      motorLeft.mSpeed = 0;
       setMotorSpeed(motorLeft);
       currentDirection |= LEFT_DIRECTION;
     }
@@ -145,8 +145,8 @@ void turnRight()
 {
   //slow down the right motor to turn right
   if (!(currentDirection & RIGHT_DIRECTION)){
-    motorRight.mSpeed-=TURN_SPEED_OFFSET; 
-    //motorRight.mSpeed = 0;
+    //motorRight.mSpeed-=TURN_SPEED_OFFSET; 
+    motorRight.mSpeed = 0;
     setMotorSpeed(motorRight);
     currentDirection |= RIGHT_DIRECTION;
   }
@@ -154,7 +154,7 @@ void turnRight()
 
 void goForward()
 {
-  //if going backwards then stop motors and then go forward
+  //if going backwards then stop      motors and then go forward
   if(!(currentDirection & FORWARD_DIRECTION))
   {
     dbg_print("Drive Forward ...\n");
